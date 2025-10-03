@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from 'next-themes'
 import { SidebarProvider } from '@/components/ui/sidebar';
 import { Sidebar } from '@/components/Sidebar';
 import { Header } from '@/components/Header';
@@ -24,19 +25,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
         className={`${inter.className} ${spaceGrotesk.className} antialiased`}
       >
-        <SidebarProvider>
-          <div className="flex min-h-screen w-full bg-background">
-            <Sidebar />
-            <div className="flex-1 flex flex-col">
-              <Header />
-              {children}
+        <ThemeProvider attribute="class" defaultTheme="system" value={{ light: "light", dark: "dark" }}>
+          <SidebarProvider>
+            <div className="flex min-h-screen w-full bg-background">
+              <Sidebar />
+              <div className="flex-1 flex flex-col">
+                <Header />
+                {children}
+              </div>
             </div>
-          </div>
-        </SidebarProvider>
+          </SidebarProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
