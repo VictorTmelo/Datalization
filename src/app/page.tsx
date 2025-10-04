@@ -22,8 +22,8 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-3xl font-display font-bold text-foreground">Dashboard Overview</h1>
-          <p className="text-muted-foreground mt-2">Monitor your key metrics and performance indicators</p>
+          <h1 className="text-4xl font-display font-bold text-foreground mb-2">Dashboard</h1>
+          <p className="text-muted-foreground">Monitor your key metrics and performance indicators</p>
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
