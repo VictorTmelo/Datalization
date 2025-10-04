@@ -9,6 +9,7 @@ interface PieChartProps {
 }
 
 export function PieChart({ title, data }: PieChartProps) {
+  
   const COLORS = [
     'hsl(var(--primary))',
     'var(--chart-2)',

@@ -13,6 +13,7 @@ interface MetricCardProps {
 }
 
 export function MetricCard({ title, value, change, icon: Icon, delay = 0 }: MetricCardProps) {
+  
   const isPositive = change >= 0;
 
   return (

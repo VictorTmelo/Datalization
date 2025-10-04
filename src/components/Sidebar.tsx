@@ -22,6 +22,7 @@ import {
 } from '@/components/ui/sidebar';
 
 export function Sidebar() {
+  
   const { state } = useSidebar();
   const isCollapsed = state === 'collapsed';
 

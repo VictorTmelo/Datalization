@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { useTheme } from 'next-themes';
 
 export function Header() {
+  
   const { theme, setTheme } = useTheme();
 
   return (
@@ -15,11 +16,11 @@ export function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="h-16 border-b border-border bg-sidebar backdrop-blur-md px-6 flex items-center justify-between"
+      className="h-14 md:h-16 border-b border-border bg-sidebar backdrop-blur-md px-3 md:px-6 flex items-center justify-between"
     >
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 md:gap-4 flex-1 min-w-0">
         <SidebarTrigger className="text-muted-foreground hover:text-foreground transition-colors" />
-        <div className="relative">
+        <div className="relative hidden md:block flex-1 max-w-md">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             placeholder="Search data..."
@@ -28,7 +29,14 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 md:gap-3">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden text-muted-foreground hover:text-foreground"
+        >
+          <Search className="h-5 w-5" />
+        </Button>
         <Button
           variant="ghost"
           size="icon"
