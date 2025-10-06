@@ -8,6 +8,7 @@ import {
   LineChart,
   Settings,
   FileText,
+  Target,
 } from 'lucide-react';
 import {
   Sidebar as SidebarComponent,
@@ -29,6 +30,7 @@ export function Sidebar() {
   const menuItems = [
     { icon: Home, label: 'Dashboard', path: '/' },
     { icon: LineChart, label: 'Analytics', path: '/analytics' },
+    { icon: Target, label: 'Metrics', path: '/metrics' },
     { icon: FileText, label: 'Reports', path: '/reports' },
     { icon: Settings, label: 'Settings', path: '/settings' },
   ];
